@@ -1,0 +1,171 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "import",
+    "sort-keys-fix",
+    "sort-destructure-keys",
+    "react-hooks"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "src"
+        ]
+      }
+    }
+  },
+  "rules": {
+    "curly": [
+      "warn",
+      "all"
+    ],
+    "require-await": "warn",
+    "class-methods-use-this": "off",
+    "sort-keys-fix/sort-keys-fix": "warn",
+    "sort-destructure-keys/sort-destructure-keys": [
+      "warn",
+      {
+        "caseSensitive": true
+      }
+    ],
+    "react/button-has-type": "off",
+    "react/no-array-index-key": "off",
+    "react/jsx-sort-props": "warn",
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "prop": "ignore"
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/label-has-for": "off",
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "warn",
+    "import/no-cycle": "warn",
+    "import/no-named-as-default-member": "warn",
+    "react-hooks/rules-of-hooks": "warn",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/order": [
+      "warn",
+      {
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc"
+        },
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "assets/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "components/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "containers/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "fixtures/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "forms/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "hooks/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "layouts/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "presenters/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "repositories/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "routes/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "routeSwitches/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "store/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "slices/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "utils/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/hooks/**/*.js", "src/utils/RestSlice/**/*.js"],
+      "rules": {
+        "sort-keys-fix/sort-keys-fix": "off"
+      }
+    },
+    {
+      "files": ["src/slices/**/*.js", "src/utils/RestSlice/**/*.js"],
+      "rules": {
+        "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state"] }]
+      }
+    }
+  ]
+}
